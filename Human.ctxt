@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Human()
+comment1.params=str\ hp
+comment1.target=Human(int,\ int)
+comment2.params=damage
+comment2.target=void\ takeDamage(int)
+comment2.text=\r\n\ take\ damage\ removes\ d\ hit\ points\ from\ the\ health\r\n\ \r\n\ @param\ damage\ -\ value\ to\ subtract\ from\ health\r\n
+comment3.params=g\ x\ y
+comment3.target=void\ paint(java.awt.Graphics2D,\ int,\ int)
+numComments=4
