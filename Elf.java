@@ -5,17 +5,22 @@
  * @version April 20, 2015
  */
 
-import java.util.Random;
-import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import javax.swing.ImageIcon;
+import javax.swing.*;
+import java.io.File;
+import javax.imageio.ImageIO;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Elf extends Creature 
 {
   
   private final double CHANCE_TO_DODGE = .25;
-  private Image elf;
+  private BufferedImage elf;
+  
   Elf() {
       super();
   }
@@ -57,10 +62,4 @@ public class Elf extends Creature
             System.out.println("          Elf dodged the attack!");
         }
     }
-    
-  public void paint(Graphics2D g, int x, int y) {
-        ImageIcon ii = new ImageIcon("elf.jpg");
-        elf = ii.getImage();
-        g.drawImage(elf, x, y, null);
-  }
 }

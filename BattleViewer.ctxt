@@ -2,7 +2,8 @@
 comment0.params=battle
 comment0.target=BattleViewer(Battle)
 comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ BattleViewer\r\n
-comment1.params=g
-comment1.target=void\ paint(java.awt.Graphics)
-comment1.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\ \r\n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \r\n
-numComments=2
+comment1.params=
+comment1.target=void\ createWindow()
+comment2.params=g
+comment2.target=void\ paintComponent(java.awt.Graphics)
+numComments=3

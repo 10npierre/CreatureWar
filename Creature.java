@@ -1,5 +1,7 @@
 import java.util.Random;
 import java.awt.Graphics2D;
+import javax.swing.*;
+import java.awt.image.BufferedImage;
 /**
  * Abstract class Creature - write a description of the class here
  * 
@@ -75,7 +77,4 @@ public abstract class Creature
             return "Creature is dead!";
         }
     }
-   
-    public abstract void paint(Graphics2D g, int x, int y);
-    
 }

@@ -16,6 +16,4 @@ comment4.target=boolean\ isAlive()
 comment4.text=\r\n\ @\ return\ true\ if\ health\ >\ 0,\ else\ false\r\n
 comment5.params=
 comment5.target=java.lang.String\ getHealthText()
-comment6.params=g\ x\ y
-comment6.target=void\ paint(java.awt.Graphics2D,\ int,\ int)
-numComments=7
+numComments=6

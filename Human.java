@@ -5,15 +5,21 @@
  * @version April 20, 2015
  */
 
-import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.ImageIcon;
+import java.io.File;
+import javax.imageio.ImageIO;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JLabel;
 
 public class Human extends Creature 
 {
   private final double SPECIAL_CHANCE = .1;
-  private Image human;
+  private BufferedImage human;
   
   Human() {
       super();
@@ -38,10 +44,13 @@ public class Human extends Creature
         }               
     }
     
-  public void paint(Graphics2D g, int x, int y) {
-        ImageIcon ii = new ImageIcon("human.jpg");
-        human = ii.getImage();
-        g.drawImage(human, x, y, null);
+  public BufferedImage getImage() {
+       try {
+            human = ImageIO.read(new File("human.jpg"));
+        } catch (IOException ex) {
+            //Eventually.
+        }
+      return human;
   }
 }
 

@@ -114,6 +114,7 @@ public class Battle
             System.out.println("          " + twoCurrent.getHealthText());
             battleViewer.repaint();
             Thread.sleep(1000);
+            System.out.println(" ");
             System.out.println("Side Two: ");
             if(!twoCurrent.isAlive() && sideTwo.size() > 1) {
                 sideTwo.remove(twoCurrent);

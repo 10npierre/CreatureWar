@@ -5,6 +5,4 @@ comment1.params=str\ hp
 comment1.target=CyberDemon(int,\ int)
 comment2.params=damage
 comment2.target=void\ takeDamage(int)
-comment3.params=g\ x\ y
-comment3.target=void\ paint(java.awt.Graphics2D,\ int,\ int)
-numComments=4
+numComments=3
