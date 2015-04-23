@@ -1,7 +1,7 @@
 /**
  * Human is a basic creature
- * 
- * @author Crosbie 
+ *
+ * @author Crosbie
  * @version April 20, 2015
  */
 
@@ -16,41 +16,43 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JLabel;
 
-public class Human extends Creature 
+public class Human extends Creature
 {
   private final double SPECIAL_CHANCE = .1;
-  private BufferedImage human;
-  
+
   Human() {
       super();
   }
-  
+
   Human(int str, int hp){
       super(hp, str);
   }
-  
+
   /**
      * take damage removes d hit points from the health
-     * 
+     *
      * @param damage - value to subtract from health
      */
     public void takeDamage(int damage){
-        double roll = rand.nextDouble();          
+        double roll = rand.nextDouble();
         super.takeDamage(damage);
         System.out.println("          Human took " + damage + " damage!");
         if(!this.isAlive() && roll < SPECIAL_CHANCE) {
             super.takeDamage(-damage);
             System.out.println("          Human got a second wind! It gains " + damage + " health.");
-        }               
-    }
-    
-  public BufferedImage getImage() {
-       try {
-            human = ImageIO.read(new File("human.jpg"));
-        } catch (IOException ex) {
-            //Eventually.
         }
-      return human;
+    }
+
+  public ImageIcon getImage() {
+	  ImageIcon image;
+	  if (super.isRight()) {
+        image = new ImageIcon("rsz_human.jpg");
+        return image;
+	  }
+	  else {
+		image = new ImageIcon("human.jpg");
+	  }
+	  return image;
   }
 }
 

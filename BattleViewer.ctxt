@@ -6,4 +6,6 @@ comment1.params=
 comment1.target=void\ createWindow()
 comment2.params=
 comment2.target=void\ refresh()
-numComments=3
+comment3.params=side
+comment3.target=void\ win(java.lang.String)
+numComments=4

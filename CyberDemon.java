@@ -1,8 +1,8 @@
 
 /**
  * Write a description of class CyberDemon here.
- * 
- * @author (your name) 
+ *
+ * @author (your name)
  * @version (a version number or a date)
  */
 import java.awt.image.BufferedImage;
@@ -17,13 +17,11 @@ import java.util.logging.Logger;
 
 public class CyberDemon extends Demon
 {
-    private BufferedImage image;
-        
     public CyberDemon()
     {
        super();
     }
-    
+
     public CyberDemon(int str, int hp) {
         super(str, hp);
     }
@@ -32,13 +30,16 @@ public class CyberDemon extends Demon
         super.takeDamage(damage);
         System.out.println("          Cyber Demon took " + damage + " damage!");
     }
-    
-    public BufferedImage getImage() {
-       try {
-            image = ImageIO.read(new File("elf.jpg"));
-        } catch (IOException ex) {
-            //Eventually.
-        }
-      return image;
+
+     public ImageIcon getImage() {
+	    ImageIcon image;
+	    if (super.isRight()) {
+	  	    image = new ImageIcon("rsz_cyberdemon.jpg");
+	    	return image;
+	    }
+	    else {
+	  		image = new ImageIcon("cyberdemon.jpg");
+	    }
+	    return image;
     }
 }

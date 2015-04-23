@@ -1,9 +1,11 @@
 #BlueJ class context
-comment0.params=
-comment0.target=Battle()
+comment0.params=numCreatures
+comment0.target=Battle(int)
 comment0.text=\r\n\ Create\ a\ new\ battle\r\n
 comment1.params=
 comment1.target=Creature\ getOneCurrent()
+comment10.params=args
+comment10.target=void\ main(java.lang.String[])
 comment2.params=
 comment2.target=Creature\ getTwoCurrent()
 comment3.params=
@@ -22,4 +24,4 @@ comment8.params=
 comment8.target=void\ runToCompletion()
 comment9.params=
 comment9.target=void\ reset()
-numComments=10
+numComments=11

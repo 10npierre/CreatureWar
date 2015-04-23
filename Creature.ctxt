@@ -17,5 +17,5 @@ comment4.text=\r\n\ @\ return\ true\ if\ health\ >\ 0,\ else\ false\r\n
 comment5.params=
 comment5.target=java.lang.String\ getHealthText()
 comment6.params=
-comment6.target=java.awt.image.BufferedImage\ getImage()
+comment6.target=javax.swing.ImageIcon\ getImage()
 numComments=7

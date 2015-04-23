@@ -1,8 +1,8 @@
 
 /**
  * Write a description of class Balrog here.
- * 
- * @author (your name) 
+ *
+ * @author (your name)
  * @version (a version number or a date)
  */
 import java.awt.image.BufferedImage;
@@ -17,32 +17,33 @@ import java.util.logging.Logger;
 
 public class Balrog extends Demon
 {
-    private BufferedImage image;
-    
     public Balrog(int str, int hp) {
         super(str, hp);
     }
-    
+
     public int attack(){
        //ask creature for my attack damage
        int tempAttackDamage;
        tempAttackDamage = super.attack();
        tempAttackDamage += super.attack();
-       
-       return tempAttackDamage;  
+
+       return tempAttackDamage;
     }
-    
+
     public void takeDamage(int damage) {
         super.takeDamage(damage);
         System.out.println("          Balrog took " + damage + " damage!");
     }
-    
-      public BufferedImage getImage() {
-       try {
-            image = ImageIO.read(new File("balrog.jpg"));
-        } catch (IOException ex) {
-            //Eventually.
-        }
-      return image;
-  }
+
+    public ImageIcon getImage() {
+	    ImageIcon image;
+	    if (super.isRight()) {
+	    	 image = new ImageIcon("rsz_balrog.jpg");
+	    	 return image;
+	    }
+	    else {
+	    	image = new ImageIcon("balrog.jpg");
+	    }
+	    return image;
+    }
 }

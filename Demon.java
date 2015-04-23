@@ -35,6 +35,6 @@ public abstract class Demon extends Creature
        return tempAttackDamage;  
   }
   
-  public abstract BufferedImage getImage();
+  public abstract ImageIcon getImage();
 }
  

@@ -6,5 +6,5 @@ comment1.target=int\ attack()
 comment2.params=damage
 comment2.target=void\ takeDamage(int)
 comment3.params=
-comment3.target=java.awt.image.BufferedImage\ getImage()
+comment3.target=javax.swing.ImageIcon\ getImage()
 numComments=4
