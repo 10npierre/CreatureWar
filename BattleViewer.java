@@ -23,10 +23,11 @@ public class BattleViewer extends JFrame
 {
     private Battle battle;
     private JPanel contentPane;
-    BufferedImage onePic;
-    BufferedImage twoPic;
+    JLabel onePic;
+    JLabel twoPic;
     JLabel labelLRemaining;
     JLabel labelRRemaining;
+    JLabel oneHealthText;
 
     /**
      * Constructor for objects of class BattleViewer
@@ -78,15 +79,11 @@ public class BattleViewer extends JFrame
 		JLabel label_4 = new JLabel("");
 		contentPane.add(label_4);
 		
-		labelRRemaining = new JLabel("Creatures Remaining:" + battle.getTwoRemainingText());
+		labelRRemaining = new JLabel("Creatures Remaining: " + battle.getTwoRemainingText());
 		labelRRemaining.setHorizontalAlignment(SwingConstants.CENTER);
 		labelRRemaining.setFont(new Font("Myriad Pro", Font.PLAIN, 14));
 		contentPane.add(labelRRemaining);
-		
-		JLabel onePic = new JLabel("");
-		onePic.setIcon(new ImageIcon("\\human.jpg"));
-		contentPane.add(onePic);
-		
+			
 		JLabel label_2 = new JLabel("");
 		contentPane.add(label_2);
 		
@@ -96,14 +93,23 @@ public class BattleViewer extends JFrame
 		JLabel label_3 = new JLabel("");
 		contentPane.add(label_3);
 		
+		JLabel onePic = new JLabel("");
+		labelRRemaining.setHorizontalAlignment(SwingConstants.CENTER);
+		onePic.setIcon(new ImageIcon("human.jpg"));
+		contentPane.add(onePic);
+		
 		JLabel twoRemain = new JLabel("");
 		contentPane.add(twoRemain);
 		
 		JLabel twoPic = new JLabel("");
+		labelRRemaining.setHorizontalAlignment(SwingConstants.CENTER);
+		//twoPic.setIcon(new ImageIcon(battle.getOneCurrent().getImage()));
 		contentPane.add(twoPic);
 		
-		JLabel label_7 = new JLabel("");
-		contentPane.add(label_7);
+		oneHealthText = new JLabel("HP: ");
+		oneHealthText.setHorizontalAlignment(SwingConstants.CENTER);
+		oneHealthText.setFont(new Font("Myriad Pro", Font.PLAIN, 14));
+		contentPane.add(oneHealthText);
 		
 		JLabel oneRemain = new JLabel();
 		contentPane.add(oneRemain);
@@ -113,6 +119,8 @@ public class BattleViewer extends JFrame
     public void refresh() {
         labelLRemaining.setText("Creatures Remaining: " + battle.getOneRemainingText());
         labelRRemaining.setText("Creatures Remaining: " + battle.getTwoRemainingText());
+        oneHealthText.setText("HP: " + battle.getOneCurrent().getHealthText());
+        //twoPic.setIcon(new ImageIcon(battle.getTwoCurrent().getImage()));
         revalidate();
         repaint();
     }

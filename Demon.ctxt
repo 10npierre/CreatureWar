@@ -5,4 +5,6 @@ comment1.params=str\ hp
 comment1.target=Demon(int,\ int)
 comment2.params=
 comment2.target=int\ attack()
-numComments=3
+comment3.params=
+comment3.target=java.awt.image.BufferedImage\ getImage()
+numComments=4

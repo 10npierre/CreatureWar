@@ -77,4 +77,8 @@ public abstract class Creature
             return "Creature is dead!";
         }
     }
+    
+    public abstract BufferedImage getImage();
+    
+   
 }

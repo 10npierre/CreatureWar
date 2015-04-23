@@ -16,4 +16,6 @@ comment4.target=boolean\ isAlive()
 comment4.text=\r\n\ @\ return\ true\ if\ health\ >\ 0,\ else\ false\r\n
 comment5.params=
 comment5.target=java.lang.String\ getHealthText()
-numComments=6
+comment6.params=
+comment6.target=java.awt.image.BufferedImage\ getImage()
+numComments=7
