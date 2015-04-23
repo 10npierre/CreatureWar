@@ -19,12 +19,14 @@ import java.io.File;
 import javax.imageio.ImageIO;
 import java.io.IOException;
 
-public class BattleViewer extends JPanel
+public class BattleViewer extends JFrame
 {
     private Battle battle;
     private JPanel contentPane;
     BufferedImage onePic;
     BufferedImage twoPic;
+    JLabel labelLRemaining;
+    JLabel labelRRemaining;
 
     /**
      * Constructor for objects of class BattleViewer
@@ -35,57 +37,86 @@ public class BattleViewer extends JPanel
        createWindow();
     }
     
-    private void createWindow() {
-        JFrame window = new JFrame("Creature War");
-        window.setSize(600, 400);		    
-        
-        contentPane = new JPanel();
-        setBounds(100, 100, 600, 400);
-    	contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-    	contentPane.setLayout(null);
-    	    	    	
-    	JLabel lblCreatureWar = new JLabel("Creature War");
-    	lblCreatureWar.setBounds(5, 5, 574, 23);
-    	lblCreatureWar.setHorizontalAlignment(SwingConstants.CENTER);
-    	lblCreatureWar.setFont(new Font("Myriad Pro", Font.PLAIN, 22));
-    	contentPane.add(lblCreatureWar);
-    	
-    	JLabel lblSideOne = new JLabel("Side One");
-    	lblSideOne.setFont(new Font("Myriad Pro", Font.PLAIN, 14));
-    	lblSideOne.setBounds(70, 39, 58, 14);
-    	contentPane.add(lblSideOne);
-    	
-    	JLabel lblSideTwo = new JLabel("Side Two");
-    	lblSideTwo.setFont(new Font("Myriad Pro", Font.PLAIN, 14));
-    	lblSideTwo.setBounds(467, 39, 58, 14);
-    	contentPane.add(lblSideTwo);
-    	
-    	JLabel labelLRemaining = new JLabel("Creatures Remaining: ");
-    	labelLRemaining.setFont(new Font("Myriad Pro", Font.PLAIN, 14));
-    	labelLRemaining.setBounds(55, 64, 158, 14);
-    	contentPane.add(labelLRemaining);
-    	
-    	JLabel labelRRemaining = new JLabel("Creatures Remaining: ");
-    	labelRRemaining.setFont(new Font("Myriad Pro", Font.PLAIN, 14));
-    	labelRRemaining.setBounds(410, 64, 145, 14);
-    	contentPane.add(labelRRemaining);
-    	    	    	
-    	window.setVisible(true);
-    	window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    	
-    	window.getContentPane().add(contentPane);
-
+    
+    public void createWindow() {
+       	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 600, 400);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(new GridLayout(8, 3, 0, 0));
+		
+		JLabel label = new JLabel("");
+		contentPane.add(label);
+		
+		JLabel lblCreatureWar = new JLabel("Creature War");
+		lblCreatureWar.setHorizontalAlignment(SwingConstants.CENTER);
+		lblCreatureWar.setFont(new Font("Myriad Pro", Font.PLAIN, 22));
+		contentPane.add(lblCreatureWar);
+		
+		JLabel label_5 = new JLabel("");
+		contentPane.add(label_5);
+		
+		JLabel lblSideOne = new JLabel("Side One");
+		lblSideOne.setHorizontalAlignment(SwingConstants.CENTER);
+		lblSideOne.setFont(new Font("Myriad Pro", Font.PLAIN, 14));
+		contentPane.add(lblSideOne);
+		
+		JLabel label_6 = new JLabel("");
+		contentPane.add(label_6);
+		
+		JLabel lblSideTwo = new JLabel("Side Two");
+		lblSideTwo.setHorizontalAlignment(SwingConstants.CENTER);
+		lblSideTwo.setFont(new Font("Myriad Pro", Font.PLAIN, 14));
+		contentPane.add(lblSideTwo);
+		
+		labelLRemaining = new JLabel("Creatures Remaining: " + battle.getOneRemainingText());
+		labelLRemaining.setHorizontalAlignment(SwingConstants.CENTER);
+		labelLRemaining.setFont(new Font("Myriad Pro", Font.PLAIN, 14));
+		contentPane.add(labelLRemaining);
+		
+		JLabel label_4 = new JLabel("");
+		contentPane.add(label_4);
+		
+		labelRRemaining = new JLabel("Creatures Remaining:" + battle.getTwoRemainingText());
+		labelRRemaining.setHorizontalAlignment(SwingConstants.CENTER);
+		labelRRemaining.setFont(new Font("Myriad Pro", Font.PLAIN, 14));
+		contentPane.add(labelRRemaining);
+		
+		JLabel onePic = new JLabel("");
+		onePic.setIcon(new ImageIcon("\\human.jpg"));
+		contentPane.add(onePic);
+		
+		JLabel label_2 = new JLabel("");
+		contentPane.add(label_2);
+		
+		JLabel label_1 = new JLabel("");
+		contentPane.add(label_1);
+		
+		JLabel label_3 = new JLabel("");
+		contentPane.add(label_3);
+		
+		JLabel twoRemain = new JLabel("");
+		contentPane.add(twoRemain);
+		
+		JLabel twoPic = new JLabel("");
+		contentPane.add(twoPic);
+		
+		JLabel label_7 = new JLabel("");
+		contentPane.add(label_7);
+		
+		JLabel oneRemain = new JLabel();
+		contentPane.add(oneRemain);
+		setVisible(true);
     }
     
-    @Override
-    public void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        
-        JLabel labelLRemainingNumber = new JLabel(battle.getOneRemainingText());
-    	labelLRemainingNumber.setFont(new Font("Myriad Pro", Font.PLAIN, 14));
-    	labelLRemainingNumber.setBounds(255, 64, 50, 14);
-    	contentPane.add(labelLRemainingNumber);
+    public void refresh() {
+        labelLRemaining.setText("Creatures Remaining: " + battle.getOneRemainingText());
+        labelRRemaining.setText("Creatures Remaining: " + battle.getTwoRemainingText());
+        revalidate();
+        repaint();
     }
+      
 }
     
 

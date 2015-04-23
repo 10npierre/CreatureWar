@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 
 public class CyberDemon extends Demon
 {
-    private BufferedImage cyberdemon;
+    private BufferedImage image;
         
     public CyberDemon()
     {
@@ -31,5 +31,14 @@ public class CyberDemon extends Demon
     public void takeDamage(int damage) {
         super.takeDamage(damage);
         System.out.println("          Cyber Demon took " + damage + " damage!");
+    }
+    
+    public BufferedImage getImage() {
+       try {
+            image = ImageIO.read(new File("elf.jpg"));
+        } catch (IOException ex) {
+            //Eventually.
+        }
+      return image;
     }
 }

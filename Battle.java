@@ -22,14 +22,14 @@ public class Battle
      * Create a new battle
      */
     public Battle()
-    {
-        battleViewer = new BattleViewer(this);     
+    {    
         sideOne = new ArrayList<Creature>();
         sideTwo = new ArrayList<Creature>();
         for(int i = 0; i < 25; i++) {
             sideOne.add(creatureGen.generateCreature());
             sideTwo.add(creatureGen.generateCreature());
         }
+        battleViewer = new BattleViewer(this); 
     }
     
     public Creature getOneCurrent() {
@@ -53,24 +53,26 @@ public class Battle
      */
     public void runOne()
     {
-        battleViewer.repaint();
+        //battleViewer.refresh();
         System.out.println("-------------------------------------");
         if(sideOne.size() == 0) {
+            battleViewer.refresh();
             System.out.println("Side two wins!");
         }
         else if (sideTwo.size() == 0) {
+            battleViewer.refresh();
             System.out.println("Side one wins!");
         }
         else {
             oneCurrent = sideOne.get(0);
             twoCurrent = sideTwo.get(0);
-            
+            battleViewer.refresh();
             System.out.println("Side One " + "(" + sideOne.size() + " creatures remaining):" );
             System.out.println(oneCurrent.getClass().getSimpleName() + " attacks the enemy "
                                 + twoCurrent.getClass().getSimpleName() + ".");
             twoCurrent.takeDamage(oneCurrent.attack());
             System.out.println("          " + twoCurrent.getHealthText());
-            battleViewer.repaint();
+            battleViewer.refresh();
             System.out.println("Side Two " + "(" + sideTwo.size() + " creatures remaining):");
             if(!twoCurrent.isAlive() && sideTwo.size() > 1) {
                 sideTwo.remove(twoCurrent);
@@ -80,7 +82,7 @@ public class Battle
                                 + oneCurrent.getClass().getSimpleName() + ".");
             oneCurrent.takeDamage(twoCurrent.attack());
             System.out.println("          " + oneCurrent.getHealthText());
-            battleViewer.repaint();
+            battleViewer.refresh();
             if(!oneCurrent.isAlive()) {
                 sideOne.remove(oneCurrent);
             }

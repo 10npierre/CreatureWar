@@ -19,7 +19,7 @@ public class Elf extends Creature
 {
   
   private final double CHANCE_TO_DODGE = .25;
-  private BufferedImage elf;
+  private BufferedImage image;
   
   Elf() {
       super();
@@ -62,4 +62,13 @@ public class Elf extends Creature
             System.out.println("          Elf dodged the attack!");
         }
     }
+    
+   public BufferedImage getImage() {
+       try {
+            image = ImageIO.read(new File("elf.jpg"));
+        } catch (IOException ex) {
+            //Eventually.
+        }
+      return image;
+  }
 }

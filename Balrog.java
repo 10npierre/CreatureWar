@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 
 public class Balrog extends Demon
 {
-    private BufferedImage balrog;
+    private BufferedImage image;
     
     public Balrog(int str, int hp) {
         super(str, hp);
@@ -36,4 +36,13 @@ public class Balrog extends Demon
         super.takeDamage(damage);
         System.out.println("          Balrog took " + damage + " damage!");
     }
+    
+      public BufferedImage getImage() {
+       try {
+            image = ImageIO.read(new File("balrog.jpg"));
+        } catch (IOException ex) {
+            //Eventually.
+        }
+      return image;
+  }
 }
