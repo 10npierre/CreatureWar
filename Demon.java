@@ -5,10 +5,13 @@
  * @version April 20, 2015
  */
 
-import java.awt.Graphics2D;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.image.BufferedImage;
 
-public class Demon extends Creature 
+public abstract class Demon extends Creature 
 {
+  
   Demon() {
       super();
   }
@@ -32,8 +35,6 @@ public class Demon extends Creature
        return tempAttackDamage;  
   }
   
-  public void paint(Graphics2D g, int x, int y) {
-      
-  }
-  
+  public abstract ImageIcon getImage();
 }
+ 

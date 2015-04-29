@@ -1,25 +1,27 @@
 
 /**
  * Write a description of class CyberDemon here.
- * 
- * @author (your name) 
+ *
+ * @author (your name)
  * @version (a version number or a date)
  */
-import java.util.Random;
-import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import javax.swing.ImageIcon;
+import javax.swing.*;
+import java.io.File;
+import javax.imageio.ImageIO;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class CyberDemon extends Demon
 {
-    private Image cyberdemon;
-    
     public CyberDemon()
     {
        super();
     }
-    
+
     public CyberDemon(int str, int hp) {
         super(str, hp);
     }
@@ -28,10 +30,16 @@ public class CyberDemon extends Demon
         super.takeDamage(damage);
         System.out.println("          Cyber Demon took " + damage + " damage!");
     }
-    
-    public void paint(Graphics2D g, int x, int y) {
-        ImageIcon ii = new ImageIcon("cyberdemon.jpg");
-        cyberdemon = ii.getImage();
-        g.drawImage(cyberdemon, x, y, null);
+
+     public ImageIcon getImage() {
+	    ImageIcon image;
+	    if (super.isRight()) {
+	  	    image = new ImageIcon("rsz_cyberdemon.jpg");
+	    	return image;
+	    }
+	    else {
+	  		image = new ImageIcon("cyberdemon.jpg");
+	    }
+	    return image;
     }
 }
